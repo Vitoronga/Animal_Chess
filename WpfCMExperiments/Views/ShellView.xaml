@@ -1,0 +1,172 @@
+﻿<Window x:Class="WpfCMExperiments.Views.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfCMExperiments.Views"
+        mc:Ignorable="d" FontSize="16"
+        Title="ShellView" Height="800" Width="1200">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Column 0 (Menu) -->
+        <!-- Row 0: Top menu -->
+        <StackPanel Grid.Column="0" Grid.Row="0"  Orientation="Vertical" Background="Bisque">
+
+            <!-- Home -->
+            <Button MinWidth="100" MinHeight="100" 
+                    Background="#00000000" BorderThickness="0" x:Name="LoadHome">
+                <StackPanel Orientation="Vertical">
+                    <Image Margin="0, 0, 0, 10" Source="/Images/GeneralUI/home.png" Width="50"/>
+                    <TextBlock Text="Home" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <Border Height="2" Background="Black"/>
+
+            <!-- Single Player -->
+            <Button MinWidth="100" MinHeight="60" 
+                    BorderThickness="0" x:Name="LoadSinglePlayer">
+                <Button.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#0C2BFF00" Offset="0"/>
+                        <GradientStop Color="#262BFF00" Offset="1"/>
+                    </RadialGradientBrush>
+                </Button.Background>
+                <StackPanel Orientation="Horizontal">
+                    <Image Margin="-5, 0, 5, 0" Source="/Images/GeneralUI/computer.png"/>
+                    <TextBlock Text="Offline" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <Border Height="1" Background="Black"/>
+
+            <!-- LAN -->
+            <Button MinWidth="100" MinHeight="60" 
+                    BorderThickness="0" x:Name="LoadLAN">
+                <Button.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#0CFFAF00" Offset="0"/>
+                        <GradientStop Color="#26FFAF00" Offset="1"/>
+                    </RadialGradientBrush>
+                </Button.Background>
+                <StackPanel Orientation="Horizontal">
+                    <Image Margin="-5, 0, 5, 0" Source="/Images/GeneralUI/sitemap.png"/>
+                    <TextBlock Text="LAN" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <Border Height="1" Background="Black"/>
+
+            <!-- Online -->
+            <Button MinWidth="100" MinHeight="60" 
+                    BorderThickness="0" x:Name="LoadOnline">
+                <Button.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#0C00F9FF" Offset="0"/>
+                        <GradientStop Color="#2600F9FF" Offset="1"/>
+                    </RadialGradientBrush>
+                </Button.Background>
+                <StackPanel Orientation="Horizontal">
+                    <Image Margin="-5, 0, 5, 0" Source="/Images/GeneralUI/globe.png"/>
+                    <TextBlock Text="Online" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <Border Height="1" Background="Black"/>
+            
+            <!-- Misc (Toggles) -->
+            <StackPanel Orientation="Horizontal" MinHeight="50" 
+                        HorizontalAlignment="Center">
+                <Button Background="#00000000" BorderThickness="0" 
+                        x:Name="ToggleSettings">
+                    <Image Margin="0, 0, 5, 0" Source="/Images/GeneralUI/settings.png"/>
+                </Button>
+                <Button Background="#00000000" BorderThickness="0" 
+                        x:Name="ToggleReport">
+                    <Image Margin="0, 0, 5, 0" Source="/Images/GeneralUI/triangle-danger.png"/>
+                </Button>
+                <Button Background="#00000000" BorderThickness="0" 
+                        x:Name="ToggleHelp">
+                    <Image Margin="0, 0, 5, 0" Source="/Images/GeneralUI/help-circle.png"/>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Row 1: Bottom menu -->
+        <!-- Quit -->
+        <StackPanel Grid.Column="0" Grid.Row="1"  Orientation="Vertical" Background="Bisque">
+            <Border Height="1" Background="Black"/>
+            <Button MinWidth="100" MinHeight="50" 
+                    Background="#ffaa88" BorderThickness="0" x:Name="AppQuit">
+                <StackPanel Orientation="Horizontal">
+                    <Image Margin="-5, 0, 5, 0" Source="/Images/GeneralUI/power.png"/>
+                    <TextBlock Text="Quit" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <Border Height="1" Background="Black"/>
+        </StackPanel>
+
+        <!-- Column 1 -->
+        <!-- Main Content -->
+        <ContentControl Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" x:Name="ActiveItem"/>
+        
+        <!-- Togglable Panels -->
+        <!-- Help -->
+        <ScrollViewer Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Margin="20" 
+                      Background="#B2000000" Visibility="{Binding Path=HelpPanelVisibility}">
+            <StackPanel>
+                <!--<Button x:Name="ToggleHelp" Content="X" Width="30" Height="30" 
+                        Background="#44FF0000" BorderThickness="0" 
+                        HorizontalAlignment="Right"/>-->
+                <TextBlock Text="HOW TO PLAY" FontSize="60" Margin="20" 
+                           Foreground="Wheat" HorizontalAlignment="Center"/>
+                <StackPanel Orientation="Horizontal" Height="50" Margin="50 20">
+                    <Image Source="/Images/GeneralUI/HelpPanel/target.png"/>
+                    <TextBlock Margin="10 0" FontSize="20" Foreground="Wheat" 
+                               VerticalAlignment="Center" TextWrapping="Wrap">
+                    The goal of the game is to reach the opponent's base with one of your pieces
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="50" Margin="50 20">
+                    <Image Source="/Images/GeneralUI/HelpPanel/move.png"/>
+                    <TextBlock Margin="10 0" FontSize="20" Foreground="Wheat" 
+                               VerticalAlignment="Center" TextWrapping="Wrap">
+                    You can move your pieces horizontally or vertically
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="50" Margin="50 20">
+                    <Image Source="/Images/GeneralUI/HelpPanel/award.png"/>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Margin="10 0" FontSize="20" Foreground="Wheat" 
+                               VerticalAlignment="Center" TextWrapping="Wrap">
+                        Pieces have strength values. Use stronger pieces to capture your opponent's weaker pieces.*
+                        </TextBlock>
+                        <TextBlock Margin="10 0" FontSize="20" Foreground="LightSlateGray" 
+                               VerticalAlignment="Center" TextWrapping="Wrap">
+                        * the only exception is the weakest (1) can beat the strongest (8).
+                        </TextBlock>
+                    </StackPanel>                    
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="50" Margin="50 20">
+                    <Image Source="/Images/GeneralUI/HelpPanel/droplet.png"/>
+                    <TextBlock Margin="10 0" FontSize="20" Foreground="Wheat" 
+                               VerticalAlignment="Center" TextWrapping="Wrap">
+                        The Tiger (6) and Lion (7) can jump over the river. The rat (1) can swim in it.
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="50" Margin="50 20">
+                    <Image Source="/Images/GeneralUI/HelpPanel/alert-octagon.png"/>
+                    <TextBlock Margin="10 0" FontSize="20" Foreground="Wheat" 
+                               VerticalAlignment="Center" TextWrapping="Wrap">
+                        Pieces that enter the adjacent tiles to the opponent's base can be captured by any enemy piece.
+                    </TextBlock>
+                </StackPanel>
+                
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

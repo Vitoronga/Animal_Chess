@@ -1,0 +1,89 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\AnimalChessImages\cat.png" />
+    <None Remove="Images\AnimalChessImages\dog.png" />
+    <None Remove="Images\AnimalChessImages\elephant.png" />
+    <None Remove="Images\AnimalChessImages\empty.png" />
+    <None Remove="Images\AnimalChessImages\leopard.png" />
+    <None Remove="Images\AnimalChessImages\lion.png" />
+    <None Remove="Images\AnimalChessImages\p1_den.png" />
+    <None Remove="Images\AnimalChessImages\p1_trap.png" />
+    <None Remove="Images\AnimalChessImages\p2_den.png" />
+    <None Remove="Images\AnimalChessImages\p2_trap.png" />
+    <None Remove="Images\AnimalChessImages\rat.png" />
+    <None Remove="Images\AnimalChessImages\tiger.png" />
+    <None Remove="Images\AnimalChessImages\water.png" />
+    <None Remove="Images\AnimalChessImages\wolf.png" />
+    <None Remove="Images\computer.png" />
+    <None Remove="Images\GeneralUI\help-circle.png" />
+    <None Remove="Images\GeneralUI\HelpPanel\award.png" />
+    <None Remove="Images\GeneralUI\HelpPanel\droplet.png" />
+    <None Remove="Images\GeneralUI\HelpPanel\move.png" />
+    <None Remove="Images\GeneralUI\HelpPanel\target.png" />
+    <None Remove="Images\globe.png" />
+    <None Remove="Images\home.png" />
+    <None Remove="Images\play.png" />
+    <None Remove="Images\power.png" />
+    <None Remove="Images\settings.png" />
+    <None Remove="Images\share-alt.png" />
+    <None Remove="Images\signal.png" />
+    <None Remove="Images\sitemap.png" />
+    <None Remove="Images\triangle-danger.png" />
+    <None Remove="Images\user.png" />
+    <None Remove="Images\wifi.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Caliburn.Micro" Version="4.0.212" />
+    <PackageReference Include="Caliburn.Micro.Core" Version="4.0.212" />
+    <PackageReference Include="SocketWrapperLibraryTest" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AnimalChessLibrary\AnimalChessLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\AnimalChessImages\cat.png" />
+    <Resource Include="Images\AnimalChessImages\dog.png" />
+    <Resource Include="Images\AnimalChessImages\elephant.png" />
+    <Resource Include="Images\AnimalChessImages\empty.png" />
+    <Resource Include="Images\AnimalChessImages\leopard.png" />
+    <Resource Include="Images\AnimalChessImages\lion.png" />
+    <Resource Include="Images\AnimalChessImages\p1_den.png" />
+    <Resource Include="Images\AnimalChessImages\p1_trap.png" />
+    <Resource Include="Images\AnimalChessImages\p2_den.png" />
+    <Resource Include="Images\AnimalChessImages\p2_trap.png" />
+    <Resource Include="Images\AnimalChessImages\rat.png" />
+    <Resource Include="Images\AnimalChessImages\tiger.png" />
+    <Resource Include="Images\AnimalChessImages\water.png" />
+    <Resource Include="Images\AnimalChessImages\wolf.png" />
+    <Resource Include="Images\GeneralUI\computer.png" />
+    <Resource Include="Images\GeneralUI\globe.png" />
+    <Resource Include="Images\GeneralUI\help-circle.png" />
+    <Resource Include="Images\GeneralUI\HelpPanel\alert-octagon.png" />
+    <Resource Include="Images\GeneralUI\HelpPanel\award.png" />
+    <Resource Include="Images\GeneralUI\HelpPanel\droplet.png" />
+    <Resource Include="Images\GeneralUI\HelpPanel\move.png" />
+    <Resource Include="Images\GeneralUI\HelpPanel\target.png" />
+    <Resource Include="Images\GeneralUI\home.png" />
+    <Resource Include="Images\GeneralUI\play.png" />
+    <Resource Include="Images\GeneralUI\power.png" />
+    <Resource Include="Images\GeneralUI\settings.png" />
+    <Resource Include="Images\GeneralUI\share-alt.png" />
+    <Resource Include="Images\GeneralUI\signal.png" />
+    <Resource Include="Images\GeneralUI\sitemap.png" />
+    <Resource Include="Images\GeneralUI\triangle-danger.png" />
+    <Resource Include="Images\GeneralUI\user.png" />
+    <Resource Include="Images\GeneralUI\wifi.png" />
+  </ItemGroup>
+
+</Project>
